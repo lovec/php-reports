@@ -72,6 +72,7 @@ class MysqlReportType extends ReportTypeBase {
 			throw new Exception('Could not connect to Mysql: '.mysql_error());
 		}
 		
+		mysql_set_charset('utf8',$report->conn);
 		if(isset($config['database'])) {
 			if(!mysql_select_db($config['database'],$report->conn)) {
 				throw new Exception('Could not select Mysql database: '.mysql_error($report->conn));
