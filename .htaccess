@@ -1,3 +1,11 @@
+<IfDefine production>
+AuthType Basic
+AuthName "Welcome to pandas show"
+AuthUserFile /htdocs/report.hotelquickly.com/.htpasswd
+Require valid-user
+</IfDefine>
+
+
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
